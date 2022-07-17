@@ -18,11 +18,12 @@ const DrawCanvas = ({ keyword, canvasWidth }: DrawCanvasProps): JSX.Element => {
           className="clearButton"
           onClick={() => refCanvasDraw.current.eraseAll()}
         />
-        <Button 
+        {/* TODO: Add QUIT GAME */}
+        {/* <Button 
           icon={<CloseOutlined />} 
           className="clearButton"
-          onClick={() => console.log("QUIT THE GAME")}
-        />
+          onClick={() => refCanvasDraw.current.eraseAll()} 
+        /> */}
       </div>
       <CanvasDraw
         ref={refCanvasDraw}

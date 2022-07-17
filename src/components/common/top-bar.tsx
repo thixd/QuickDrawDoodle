@@ -21,7 +21,7 @@ const TopBar = ({ keyword }: TopBarProps): JSX.Element => {
 
   return (
     <div className='topnav'>
-      <div className='keyword'>
+      <div className='keywordNavBar'>
         Draw: {keyword}
       </div>
       {timer >= 10

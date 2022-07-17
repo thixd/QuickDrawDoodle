@@ -3,8 +3,9 @@ import './key-word-panel.css';
 type KeywordPanelProps = {
   keyword: string,
   numberOfDraw: number
+  setShowKeywordPanel: (value: React.SetStateAction<boolean>) => void
 }
-const KeywordPanel = ({ keyword, numberOfDraw }: KeywordPanelProps): JSX.Element => {
+const KeywordPanel = ({ keyword, numberOfDraw, setShowKeywordPanel }: KeywordPanelProps): JSX.Element => {
   return (
     <div className="background">
       <div className="numberOfDraw">
@@ -16,7 +17,8 @@ const KeywordPanel = ({ keyword, numberOfDraw }: KeywordPanelProps): JSX.Element
           {keyword}
         </div>
         in under 20s
-        <button className="gotItButton" onClick={() => console.log("start drawing")}>
+        <br/>
+        <button className="gotItButton" onClick={() => setShowKeywordPanel(false)}>
           Got it!
         </button>     
       </div>
