@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
 import './App.css';
+import landingImageFromGoogle from './assets/landing-page.png';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="pageLayout">
+      <img src={landingImageFromGoogle} />
+      <div className="title">
+        Inspired by Google Quick Draw
+      </div>
+      <div className="subtitle">
+        You can play alone or with friend. In given time, both of you with try to draw the given keyword, whose draw get detected faster by neural network will win.
+      </div>
+      <Link to="/game-for-one">
+        <button>
+          Start game now
+        </button>
+      </Link>
+      <div className="subtitle">
+        More fun? Play with friend
+      </div>
+      <button>
+        Invite friend with code
+      </button>
+      <br />
+      <button>
+        Enter invitation code and start
+      </button>
     </div>
-  );
+  )
 }
 
 export default App;

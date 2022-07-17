@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&display=swap');
+
+.pageLayout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+img {
+  width: 700px;
+}
+
+.title {
+  max-width: 700px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Chilanka', cursive;
+}
+
+.subtitle {
+  margin: 12px 0;
+  max-width: 700px;
+  font-size: 24px;
+}
+
+button {
+  margin: 0 auto;
+  width: 320px;
+  height: 55px;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  background-color: #fcd33c;
+  margin: 8px 0;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 6px 6px 4px #e0dfdd;
+}
+
+button:hover {
+  cursor: pointer;
+}
