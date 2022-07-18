@@ -42,6 +42,7 @@ const DrawCanvas = ({ keyword, canvasWidth, isTimeOut}: DrawCanvasProps): JSX.El
           onClick={() => navigate("/quit")} 
         />
         <Button
+          className="clearButton"
           icon={<CameraOutlined />}
           onClick={getImage}
         />

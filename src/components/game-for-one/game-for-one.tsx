@@ -32,7 +32,7 @@ function GameForOne() {
             />
             <DrawCanvas 
               keyword={keyword} 
-              canvasWidth={window.screen.availWidth * 0.5} 
+              canvasWidth={window.screen.availWidth} 
               isTimeOut={isTimeout}
             />
           </Fragment>
