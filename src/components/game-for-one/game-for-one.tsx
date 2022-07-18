@@ -5,27 +5,39 @@ import TopBar from "../common/top-bar";
 import './game-for-one.css'
 
 function GameForOne() {
-  const [showKeywordPanel, setShowKeywordPanel] = useState<boolean> (true);
-  const [keyword, setKeyword] = useState<string> ("bike");
-  const [numberOfDraw, setNumberofDraw] = useState<number> (1);
+  const [showKeywordPanel, setShowKeywordPanel] = useState<boolean>(true);
+  const [keyword, setKeyword] = useState<string>("bike");
+  const [numberOfDraw, setNumberofDraw] = useState<number>(1);
+  const [isTimeout, setIsTimeOut] = useState<boolean>(false);
 
-  useEffect(()=>{
-    setTimeout(()=>{
+  useEffect(() => {
+    setTimeout(() => {
       setShowKeywordPanel(false);
-    }, 3000);
-  },[])
+    }, 2000);
+  }, [])
 
   return (
-      <Fragment>
+    <Fragment>
       {
-        showKeywordPanel 
-        ? <KeywordPanel keyword={keyword} numberOfDraw={numberOfDraw} setShowKeywordPanel={setShowKeywordPanel}/>
-        : <Fragment>
-            <TopBar keyword={keyword}/>
-            <DrawCanvas keyword={keyword} canvasWidth={window.screen.availWidth}/>
+        showKeywordPanel
+          ? <KeywordPanel 
+              keyword={keyword} 
+              numberOfDraw={numberOfDraw} 
+              setShowKeywordPanel={setShowKeywordPanel} 
+            />
+          : <Fragment>
+            <TopBar 
+              keyword={keyword}
+              setIsTimeOut={setIsTimeOut}
+            />
+            <DrawCanvas 
+              keyword={keyword} 
+              canvasWidth={window.screen.availWidth * 0.5} 
+              isTimeOut={isTimeout}
+            />
           </Fragment>
       }
-      </Fragment>
+    </Fragment>
   )
 }
 

@@ -1,17 +1,18 @@
 import { useState, useEffect, Fragment } from 'react';
-import CanvasDraw from "react-canvas-draw";
 
 import './top-bar.css';
 
 type TopBarProps = {
   keyword: string,
+  setIsTimeOut: (value: React.SetStateAction<boolean>) => void
 }
 
-const TopBar = ({ keyword }: TopBarProps): JSX.Element => {
+const TopBar = ({ keyword, setIsTimeOut }: TopBarProps): JSX.Element => {
   const [timer, setTimer] = useState<number>(20);
   useEffect(() => {
     const timeInterval = setInterval(() => {
       if (timer === 0) {
+        setIsTimeOut(true);
         return;
       }
       setTimer(timer - 1);

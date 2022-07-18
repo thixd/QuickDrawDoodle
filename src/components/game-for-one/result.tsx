@@ -1,22 +1,22 @@
 import './top-bar.css';
 
 type ResultProps = {
-  keywordImages: Array<{string: string}>,
+  keywordAndImages?: Array<{string: string}> | undefined,
   result: Array<boolean>
 }
 
-const Result = ({ keywordImages, result }: ResultProps): JSX.Element => {
+const Result = ({ keywordAndImages, result }: ResultProps): JSX.Element => {
   const countCorrectImg = result.filter(res => res === true).length;
   return (
     <div>
       Yay! {countCorrectImg}/6 is detected!
       Your drawing
-      {keywordImages.map(() => 
+      {/* {keywordAndImages.map(() => 
         <div>
           Image and Keyword here!
         </div>
         )
-      }
+      } */}
     </div>
   )
 }

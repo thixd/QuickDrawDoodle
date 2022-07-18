@@ -9,6 +9,7 @@ import {
   Route,
 } from "react-router-dom";
 import GameForOne from './components/game-for-one/game-for-one';
+import QuitAlert from './components/common/quit';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,6 +19,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="game-for-one" element={<GameForOne />} />
+      <Route path="quit" element={<QuitAlert />} />
     </Routes>
   </BrowserRouter>
 );

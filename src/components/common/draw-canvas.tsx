@@ -1,15 +1,33 @@
-import { Fragment, useRef } from "react";
+import { Fragment,  createRef, useRef, useEffect, useState } from "react";
 import CanvasDraw from "react-canvas-draw";
 import { Button } from 'antd';
-import { ReloadOutlined, CloseOutlined } from '@ant-design/icons';
+import { ReloadOutlined, CloseOutlined, CameraOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
+import { useScreenshot } from 'use-react-screenshot'
+
 import './draw-canvas.css'
 
 type DrawCanvasProps = {
   keyword: string,
-  canvasWidth: number
+  canvasWidth: number,
+  isTimeOut: boolean,
 }
-const DrawCanvas = ({ keyword, canvasWidth }: DrawCanvasProps): JSX.Element => {
+
+const DrawCanvas = ({ keyword, canvasWidth, isTimeOut}: DrawCanvasProps): JSX.Element => {
   const refCanvasDraw = useRef<any>();
+  const navigate = useNavigate();
+  const [keywordAndImages, setKeywordAndImages] = useState<Array<{string: string}>>([]);
+  
+  const ref = createRef<any>();
+  const [image, takeScreenshot] = useScreenshot()
+  const getImage = () => takeScreenshot(ref.current)
+
+  useEffect(()=>{
+    setKeywordAndImages(
+      {...keywordAndImages, [keyword]: image}
+    );
+  },[isTimeOut]);
+
   return (
     <div className="canvas">
       <div className="buttonContainer">
@@ -18,22 +36,26 @@ const DrawCanvas = ({ keyword, canvasWidth }: DrawCanvasProps): JSX.Element => {
           className="clearButton"
           onClick={() => refCanvasDraw.current.eraseAll()}
         />
-        {/* TODO: Add QUIT GAME */}
-        {/* <Button 
+        <Button 
           icon={<CloseOutlined />} 
           className="clearButton"
-          onClick={() => refCanvasDraw.current.eraseAll()} 
-        /> */}
+          onClick={() => navigate("/quit")} 
+        />
+        <Button
+          icon={<CameraOutlined />}
+          onClick={getImage}
+        />
       </div>
-      <CanvasDraw
-        ref={refCanvasDraw}
-        canvasWidth={canvasWidth}
-        canvasHeight={window.screen.availHeight}
-        // hideGrid={true}
-        brushRadius={4}
-      />
+      {/* <img src={image} width={300} height={300}/> */}
+      <div ref = {ref}>
+        <CanvasDraw
+          ref={refCanvasDraw}
+          canvasWidth={canvasWidth}
+          canvasHeight={window.screen.availHeight}
+          brushRadius={4}
+        />
+      </div>
     </div>
-
   )
 }
 
