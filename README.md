@@ -13,7 +13,7 @@ Tech used
   - antd button: icon button
 How to execute
 ====
-`npm install` to start install (node modules folder should be deleted before that)and `npm run client:build` to start client side and also `npm run server` to start server side of the root directory of this repository. Then, you can access to this project by
+`npm install` to start install (node modules folder should be deleted before that)and `npm start`. Then, you can access to this project by
 https://localhost:3000 <br/>
 Will be deployed soon!
 
