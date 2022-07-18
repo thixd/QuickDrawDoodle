@@ -11,6 +11,7 @@ Tech used
   - react-canvas-draw: canvas to draw on
   - use-react-screenshot: take screenshot of a components
   - antd button: icon button
+  
 How to execute
 ====
 `npm install` to start install (node modules folder should be deleted before that)and `npm start`. Then, you can access to this project by
