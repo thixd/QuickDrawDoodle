@@ -10,3 +10,15 @@
   background-color: #dc5c94;
   margin: 20px 10px;
 }
+
+.prediction {
+  background-color: lightgrey;
+  font-size: 28px;
+  width: 270px;
+  height: 50px;
+  padding: 12px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
