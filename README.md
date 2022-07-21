@@ -21,7 +21,7 @@ Tech used
 How to execute
 ====
 - Backend: <br/>
-Go to `backend` folder, run `flask run` to start back end server 
+Go to `backend` folder, install `pip install -r requirements.txt`. Start train the model. The pretrained model is too heavy so be obmitted here.After that run `flask run` to start back end server.
 - Frontend: <br/>
 `npm install` to start install (node modules folder should be deleted before that)and `npm start`. Then, you can access to this project by
 https://localhost:3000 <br/>
